@@ -1,0 +1,34 @@
+version: '3.8'
+
+#volumes:
+#    logs:
+#        driver: local
+
+services:
+    php:
+        build: ./docker/frankenphp
+        ports:
+            - "80:80"
+            - "443:443"
+            - "443:443/udp"
+        volumes:
+            - ./etc/caddy:/etc/caddy
+            - ./:/app/
+            - caddy_data:/data
+            - caddy_config:/config
+        tty: true
+volumes:
+    caddy_data:
+    caddy_config:
+
+#    slim:
+#        image: php:8-alpine
+#        working_dir: /var/www
+#        command: php -S 0.0.0.0:8080 -t public
+#        environment:
+#            docker: "true"
+#        ports:
+#            - "8080:8080"
+#        volumes:
+#            - .:/var/www
+#            - logs:/var/www/logs

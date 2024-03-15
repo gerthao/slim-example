@@ -1,0 +1,11 @@
+{% extends 'base/base.html.twig' %}
+
+{% block body %}
+    <main>
+        <div>hello world</div>
+        {% include 'components/alert/alert.html.twig' with { type: 'danger', message: 'hello world' } %}
+        {% include 'components/alert/alert.html.twig' with { type: 'success', message: 'hello world' } %}
+        {% include 'components/alert/alert.html.twig' with { type: 'info', message: 'hello world' } %}
+        {% include 'components/alert/alert.html.twig' with { type: 'warning', message: 'hello world' } %}
+    </main>
+{% endblock %}

@@ -1,0 +1,76 @@
+.alert {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1em;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.33);
+    width: 28em;
+    background-color: #ffffff;
+    border-left: 4px solid #ffffff;
+    border-right: 4px solid #ffffff;
+    border-radius: 4px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.alert .alert-content {
+    flex: 1;
+}
+
+.alert .alert-content .alert-heading {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.alert .alert-content .alert-message {
+    color: #3a3a3a;
+}
+
+.alert .alert-icon {
+    margin-right: 1em;
+    font-size: 1.5em;
+}
+
+.alert.alert-danger {
+    border-left-color: #bf3f3f;
+}
+
+.alert.alert-danger .alert-icon {
+    color: #bf3f3f;
+}
+
+.alert.alert-info {
+    border-left-color: #4473dd;
+}
+
+.alert.alert-info .alert-icon {
+    color: #4473dd;
+}
+
+.alert.alert-success {
+    border-left-color: #599c3c;
+}
+
+.alert.alert-success .alert-icon {
+    color: #599c3c;
+}
+
+.alert.alert-warning {
+    border-left-color: #caa400;
+}
+
+.alert.alert-warning .alert-icon {
+    color: #caa400;
+}
+
+.alert .alert-button button {
+    font-size: 1.2em;
+    border: 0;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: 250ms;
+}
+
+.alert .alert-button button:hover {
+    transform: translateY(-2px) scale(1.15);
+}

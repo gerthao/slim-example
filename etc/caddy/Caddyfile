@@ -1,0 +1,16 @@
+{
+    frankenphp
+    order php_server before file_server
+}
+
+# Server domain name
+localhost {
+    # Set the webroot to the public/ directory
+    root * public/
+
+    # Enable compression
+    encode zstd br gzip
+
+    # Execute PHP file from the public/ directory and serve assets
+    php_server
+}

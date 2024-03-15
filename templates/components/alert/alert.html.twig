@@ -1,0 +1,20 @@
+{{ assets({ files: ['components/alert/alert.css']}) }}
+
+<div class="alert alert-{{ type }}">
+    {% if type == 'danger' %}
+        <div class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+    {% elseif type == 'info' %}
+        <div class="alert-icon"><i class="fa-solid fa-circle-info"></i></div>
+    {% elseif type == 'success' %}
+        <div class="alert-icon"><i class="fa-solid fa-check"></i></div>
+    {% elseif type == 'warning' %}
+        <div class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+    {% endif %}
+    <div class="alert-content">
+        <div class="alert-heading">{{ type|capitalize }}</div>
+        <div class="alert-message">{{ message }}</div>
+    </div>
+    <div class="alert-button">
+        <button><i class="fa-solid fa-close"></i></button>
+    </div>
+</div>
