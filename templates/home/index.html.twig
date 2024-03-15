@@ -1,5 +1,12 @@
 {% extends 'base/base.html.twig' %}
 
+{% block javascripts %}
+    {{ assets({
+        files: ['javascripts/app.js'],
+        attributes: { type: 'module' },
+    }) }}
+{% endblock %}
+
 {% block body %}
     <main>
         <div>hello world</div>
@@ -7,5 +14,8 @@
         {% include 'components/alert/alert.html.twig' with { type: 'success', message: 'hello world' } %}
         {% include 'components/alert/alert.html.twig' with { type: 'info', message: 'hello world' } %}
         {% include 'components/alert/alert.html.twig' with { type: 'warning', message: 'hello world' } %}
+
+        {% include 'components/card/user_card.html.twig' %}
+        {% include 'components/slideshow/slideshow.html.twig' %}
     </main>
 {% endblock %}

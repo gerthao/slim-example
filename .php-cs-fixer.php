@@ -1,7 +1,11 @@
 <?php declare(strict_types=1);
 
-use PhpCsFixer\Finder;
 use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
+$finder = (new Finder())
+    ->in(__DIR__)
+    ->exclude(['var', 'assets, *.js']);
 
 return (new Config())
     ->setRules([
@@ -16,8 +20,4 @@ return (new Config())
             ],
         ],
     ])
-    ->setFinder(
-        (new Finder())
-        ->in(__DIR__)
-        ->exclude('var')
-    );
+    ->setFinder($finder);

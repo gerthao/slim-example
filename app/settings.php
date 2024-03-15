@@ -22,21 +22,21 @@ return function (ContainerBuilder $containerBuilder) {
                     'level' => Logger::DEBUG,
                 ],
                 'twig' => [
-                    'path' => __DIR__ . '/../templates',
+                    'path' => [__DIR__ . '/../templates', __DIR__ . '/../assets'],
                     // Should be set to true in production
                     'cache_enabled' => false,
                     'cache_path'    => __DIR__ . '/../tmp/twig-cache',
                 ],
                 'assets' => [
                     // Public assets cache directory
-                    'path' => __DIR__ . '/../public/cache',
+                    'path' => __DIR__ . '/../public/cache/',
                     // Public url base path
                     'url_base_path' => 'cache/',
                     // Internal cache directory for the assets
                     'cache_path' => __DIR__ . '/tmp/twig-assets',
                     'cache_name' => 'assets-cache',
                     //  Should be set to 1 (enabled) in production
-                    'minify' => 0,
+                    'minify' => 1,
                 ]
             ]);
         }

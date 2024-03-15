@@ -9,7 +9,6 @@ use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
 use Odan\Twig\TwigAssetsExtension;
 use Psr\Container\ContainerInterface;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Slim\Views\Twig;
 use Twig\Loader\FilesystemLoader;
@@ -31,7 +30,10 @@ return function (ContainerBuilder $containerBuilder) {
             return $logger;
         },
         Twig::class => function (ContainerInterface $c) {
-            $settings     = $c->get(SettingsInterface::class);
+            /** @var SettingsInterface $settings */
+            $settings = $c->get(SettingsInterface::class);
+
+            /** @var string[] $twigSettings */
             $twigSettings = $settings->get('twig');
 
             $twig = Twig::create($twigSettings['path'], [
