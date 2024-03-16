@@ -5,8 +5,4 @@
 /logs/*
 !/logs/README.md
 .phpunit.result.cache
-public/cache
-app/tmp
 node_modules
-/tmp
-/public/cache

@@ -5,7 +5,8 @@ use PhpCsFixer\Finder;
 
 $finder = (new Finder())
     ->in(__DIR__)
-    ->exclude(['var', 'assets, *.js']);
+    ->exclude(['var', 'public/assets'])
+    ->exclude('*.js');
 
 return (new Config())
     ->setRules([

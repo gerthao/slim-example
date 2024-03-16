@@ -11,13 +11,13 @@ use Slim\Views\Twig;
 
 class HomeAction extends Action
 {
-    public function __construct(protected Twig $twig, protected LoggerInterface $logger)
+    public function __construct(protected LoggerInterface $logger)
     {
     }
 
     public function __invoke(Request $request, Response $response, array $args): Response
     {
-        return $this->twig->render($response, 'home/index.html.twig');
+        return Twig::fromRequest($request)->render($response, 'home/index.html.twig');
     }
 
     #[Override] protected function action(): Response

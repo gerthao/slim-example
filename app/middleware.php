@@ -9,5 +9,5 @@ use Slim\Views\TwigMiddleware;
 
 return function (App $app) {
     $app->add(SessionMiddleware::class);
-    $app->add(TwigMiddleware::createFromContainer($app, Twig::class));
+    $app->add(TwigMiddleware::create($app, Twig::create(__DIR__ . '/../templates')));
 };

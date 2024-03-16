@@ -1,10 +1,7 @@
 {% extends 'base/base.html.twig' %}
 
 {% block javascripts %}
-    {{ assets({
-        files: ['javascripts/app.js'],
-        attributes: { type: 'module' },
-    }) }}
+    <script src="{{ base_url }}/public/js/home.bundle.js"></script>
 {% endblock %}
 
 {% block body %}
