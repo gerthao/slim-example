@@ -17,6 +17,13 @@ class AssetRoutes
             return self::handleJavascript($response, $path);
         });
 
+        $app->get('/auto/{filename}.js', function (Request $request, Response $response, array $args) {
+            $filename = $args['filename'];
+            $path = __DIR__ . '/../../../public/js/' . $filename . '.js';
+
+            return self::handleJavascript($response, $path);
+        });
+
         $app->get('/public/css/{filename}.css', function (Request $request, Response $response, array $args) {
             $filename = $args['filename'];
             $path = __DIR__ . '/../../../public/css/' . $filename . '.css';

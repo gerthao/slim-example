@@ -1,7 +1,9 @@
 {% extends 'base/base.html.twig' %}
 
 {% block javascripts %}
-    <script src="{{ base_url }}/public/js/home.bundle.js"></script>
+    {% for originalFilename, hashedFilename in manifest %}
+        <script src="{{ hashedFilename }}"></script>
+    {% endfor %}
 {% endblock %}
 
 {% block body %}

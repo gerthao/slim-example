@@ -1,12 +1,17 @@
 const path = require('path');
+const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 
 module.exports = {
     entry: {
         home: './assets/js/home/home.ts',
     },
+    plugins: [
+        new WebpackManifestPlugin(),
+    ],
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'public/js')
+        filename: '[name].[contenthash].js',
+        path: path.resolve(__dirname, 'public/js'),
+        clean: true,
     },
     module: {
         rules: [
@@ -39,6 +44,18 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.js']
-    }
-
+    },
+    optimization: {
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all',
+                },
+            },
+        },
+    },
 }
