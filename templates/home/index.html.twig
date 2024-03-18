@@ -9,6 +9,8 @@
 {% block body %}
     <main>
         <div>hello world</div>
+        {{ component('alert', { type: 'danger', message: 'hello world!' }) }}
+
         {% include 'components/alert/alert.html.twig' with { type: 'danger', message: 'hello world' } %}
         {% include 'components/alert/alert.html.twig' with { type: 'success', message: 'hello world' } %}
         {% include 'components/alert/alert.html.twig' with { type: 'info', message: 'hello world' } %}

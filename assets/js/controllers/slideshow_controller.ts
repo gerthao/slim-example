@@ -5,7 +5,7 @@ export default class extends Controller<HTMLDivElement> {
     static values = {index: Number, default: 0};
 
     declare indexValue: number;
-    declare readonly slideTargets: HTMLElement[];
+    declare readonly slideTargets: HTMLDivElement[];
 
     next(): void {
         if (this.indexValue < (this.slideTargets.length - 1)) {
