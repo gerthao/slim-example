@@ -6,7 +6,12 @@ module.exports = {
         home: './assets/js/home/home.ts',
     },
     plugins: [
-        new WebpackManifestPlugin(),
+        new WebpackManifestPlugin(
+            {
+                fileName: 'manifest.json',
+                publicPath: 'js',
+            }
+        ),
     ],
     output: {
         filename: '[name].[contenthash].js',
